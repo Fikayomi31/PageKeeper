@@ -1,5 +1,5 @@
-from os
-from collection.abc import AsyncGenerator
+import os
+from collections.abc import AsyncGenerator
 
 from dotenv import load_dotenv
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
@@ -9,6 +9,9 @@ load_dotenv()
 
 
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./test.db")
+
+if not DATABASE_URL:
+    raise RuntimeError("DATABASE_URL is not set")
 
 engine = create_async_engine(
     DATABASE_URL, 
