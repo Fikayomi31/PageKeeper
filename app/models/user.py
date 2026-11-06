@@ -1,7 +1,3 @@
-from __future__ import annotations
-from typing import TYPE_CHECKING
-
-
 from datetime import datetime
 from enum import Enum
 
@@ -10,11 +6,6 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.database import Base
 from app.models.notes import Notes
-
-
-
-if TYPE_CHECKING:
-    from app.models.notes import Notes  # Import Notes for type hinting only
 
 class UserRole(str, Enum):
     ADMIN = "admin"

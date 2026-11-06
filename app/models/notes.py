@@ -1,6 +1,3 @@
-from __future__ import annotations
-from typing import TYPE_CHECKING
-
 from datetime import datetime, timezone
 from sqlalchemy import ForeignKey, Integer, String, DateTime
 from sqlalchemy.orm import Mapped, mapped_column, relationship
@@ -8,10 +5,6 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 from app.database import Base
 from app.models.user import User
 
-
-
-if TYPE_CHECKING:
-    from app.models.user import User  # Import User for type hinting only
 
 class Notes(Base):
     __tablename__ = "notes"
