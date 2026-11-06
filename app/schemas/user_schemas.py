@@ -25,8 +25,8 @@ class UserResponse(BaseModel):
     notes: list[NoteResponse] = []  
 
 
+
 # Authentication Schemas
- class TokenResponse(BaseModel):
+class TokenResponse(BaseModel):
      access_token: str
      token_type: str = "bearer"
-     
